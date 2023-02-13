@@ -37,6 +37,7 @@ int main() {
   pass.setFilterFieldName("z");
   fmt::print("set filter limits: 0.0 - 1.0\n");
   pass.setFilterLimits(0.0F, 1.0F);
+  // fmt::print("set filter inverted: true\n");
   // pass.setNegative(true);
   pass.filter(*filtered_cloud);
 
