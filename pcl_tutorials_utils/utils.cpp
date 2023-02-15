@@ -1,4 +1,4 @@
-#include "pcl-tutorials-utils/utils.h"
+#include "pcl_tutorials_utils/utils.h"
 
 #include <random>
 
@@ -23,7 +23,14 @@ void random_init_cloud(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud,
 
 void print_cloud(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud) {
   for (const auto &point : *cloud) {
-    fmt::print("  ({}, {}, {})\n", point.x, point.y, point.z);
+    fmt::println("  ({}, {}, {})", point.x, point.y, point.z);
   }
 }
+
+std::string readfile(const std::ifstream &fin) {
+  std::stringstream buffer;
+  buffer << fin.rdbuf();
+  return buffer.str();
+}
+
 } // namespace tutorials

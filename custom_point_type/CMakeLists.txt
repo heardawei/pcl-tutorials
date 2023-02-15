@@ -1,0 +1,3 @@
+add_executable(custom_point_type main.cpp)
+target_compile_features(custom_point_type PRIVATE cxx_std_11)
+target_link_libraries(custom_point_type PRIVATE pcl_tutorials_utils)

@@ -21,5 +21,6 @@ link_libraries(fmt ${PCL_LIBRARIES})
 endif(CMAKE_HOST_WIN32)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-add_subdirectory(pcl-tutorials-utils)
+add_subdirectory(pcl_tutorials_utils)
 add_subdirectory(filtering)
+add_subdirectory(custom_point_type)

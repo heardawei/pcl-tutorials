@@ -2,7 +2,7 @@
 #include <pcl/filters/passthrough.h>
 #include <pcl/point_types.h>
 
-#include "pcl-tutorials-utils/utils.h"
+#include "pcl_tutorials_utils/utils.h"
 
 using namespace tutorials;
 
