@@ -2,32 +2,11 @@
 #include <pcl/filters/passthrough.h>
 #include <pcl/point_types.h>
 
-void random_init_cloud(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud,
-                       decltype(cloud->width) width,
-                       decltype(cloud->height) height)
-{
-  cloud->width = width;
-  cloud->height = height;
-  cloud->resize(cloud->width * cloud->height);
+#include "pcl-tutorials-utils/utils.h"
 
-  for (auto &point : *cloud)
-  {
-    point.x = 1024 * rand() / (RAND_MAX + 1.0F);
-    point.y = 1024 * rand() / (RAND_MAX + 1.0F);
-    point.z = 1024 * rand() / (RAND_MAX + 1.0F);
-  }
-}
+using namespace tutorials;
 
-void print_cloud(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud)
-{
-  for (const auto &point : *cloud)
-  {
-    fmt::print("  ({}, {}, {})\n", point.x, point.y, point.z);
-  }
-}
-
-int main()
-{
+int main() {
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
   pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud(
       new pcl::PointCloud<pcl::PointXYZ>);
