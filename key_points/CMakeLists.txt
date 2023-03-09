@@ -1,0 +1,3 @@
+add_executable(key_points main.cpp)
+target_compile_features(key_points PRIVATE cxx_std_11)
+target_link_libraries(key_points PRIVATE pcl_tutorials_utils)
